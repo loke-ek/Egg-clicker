@@ -131,8 +131,9 @@ GameObject:
   - component: {fileID: 631840556}
   - component: {fileID: 631840555}
   - component: {fileID: 631840554}
+  - component: {fileID: 631840557}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,6 +241,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631840552}
   m_CullTransparentMesh: 1
+--- !u!114 &631840557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631840552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c99cba569244464b8a09d16e62e4531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EggRandomizer
+  eggSOlist:
+  - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
+  - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
+  totalChance: 0
 --- !u!1 &906858628
 GameObject:
   m_ObjectHideFlags: 0
