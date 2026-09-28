@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 631840556}
   - component: {fileID: 631840555}
   - component: {fileID: 631840554}
-  - component: {fileID: 631840557}
   m_Layer: 5
   m_Name: Chicken
   m_TagString: Untagged
@@ -202,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 631840555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1696935936}
+        m_TargetAssemblyTypeName: EggRandomizer, Assembly-CSharp
+        m_MethodName: RandomizeEggs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &631840555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,22 +252,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631840552}
   m_CullTransparentMesh: 1
---- !u!114 &631840557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631840552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c99cba569244464b8a09d16e62e4531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EggRandomizer
-  eggSOlist:
-  - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
-  - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
-  totalChance: 0
 --- !u!1 &906858628
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +434,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1696935935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696935937}
+  - component: {fileID: 1696935936}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1696935936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696935935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c99cba569244464b8a09d16e62e4531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EggRandomizer
+  eggSOlist:
+  - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
+  - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
+  totalValue: 0
+--- !u!4 &1696935937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696935935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 946.1974, y: 455.3563, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804952805
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,3 +763,4 @@ SceneRoots:
   - {fileID: 1804952808}
   - {fileID: 1274529394}
   - {fileID: 906858631}
+  - {fileID: 1696935937}

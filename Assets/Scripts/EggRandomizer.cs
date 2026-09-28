@@ -6,12 +6,18 @@ using static UnityEngine.Rendering.GPUSort;
 public class EggRandomizer : MonoBehaviour
 {
     public List<normalEgg> eggSOlist;
-    [SerializeField] int totalChance;
+    [SerializeField] int totalValue;
 
     public void RandomizeEggs()
     {
-        int value = Random.Range(0, totalChance);
 
+        foreach (normalEgg card in eggSOlist)
+        {
+            totalValue += card.value_get;
+        }
+
+
+        int value = Random.Range(0, totalValue);
         foreach (normalEgg egg in eggSOlist)
         {
             value -= egg.value_get;
