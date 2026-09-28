@@ -1,19 +1,18 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.GPUSort;
 
 public class EggRandomizer : MonoBehaviour
 {
-    public List<normalEgg> eggSOlist;
-    [SerializeField] int totalValue;
+    [SerializeField] List<normalEgg> eggSOlist;
 
-    public void RandomizeEggs()
+    public normalEgg RandomizeEggs()
     {
+        int totalValue = 0;
+
         //makes the eggs spawn randomly
-        foreach (normalEgg card in eggSOlist)
+        foreach (normalEgg egg in eggSOlist)
         {
-            totalValue += card.value_get;
+            totalValue += egg.value_get;
         }
 
         int value = Random.Range(0, totalValue);
@@ -22,12 +21,13 @@ public class EggRandomizer : MonoBehaviour
         foreach (normalEgg egg in eggSOlist)
         {
             value -= egg.value_get;
-            if (value <= 0)
+
+            if (value < 0)
             {
-                Debug.Log(egg.ToString());
-                return;
+                return egg;
             }
         }
-    }
 
+        return null;
+    }
 }
