@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GoldEgg
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
   eggImage: {fileID: -875081816885257093, guid: bb152dc151860b1448356fa8f3375ee6, type: 3}
-  value: 50
+  value: 30

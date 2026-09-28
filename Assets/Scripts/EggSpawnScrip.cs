@@ -19,6 +19,9 @@ public class EggSpawnScript : MonoBehaviour
             Quaternion.identity
         );
 
+        newEgg.GetComponent<Rigidbody2D>().AddTorque(Random.Range(-4,4), ForceMode2D.Impulse);
+        newEgg.GetComponent<Rigidbody2D>().AddForce(new Vector3());
+
         SpriteRenderer spriteRenderer = newEgg.GetComponent<SpriteRenderer>();
 
         if (spriteRenderer != null)
