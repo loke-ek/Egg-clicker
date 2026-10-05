@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1588545369102877903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5128457709999682973}
+  - component: {fileID: 6433573645420076222}
+  - component: {fileID: 4841296793118584877}
+  - component: {fileID: 7705617518444239425}
+  m_Layer: 0
+  m_Name: GameManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5128457709999682973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588545369102877903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11211, y: 0.01578, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6433573645420076222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588545369102877903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c99cba569244464b8a09d16e62e4531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EggRandomizer
+  eggSOlist:
+  - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
+  - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
+--- !u!114 &4841296793118584877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588545369102877903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2771cd5067fea545a324aed4d7b8e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EggSpawnScript
+  eggRandomizer: {fileID: 6433573645420076222}
+  eggPrefab: {fileID: 1296731927088871011, guid: cc54ffc5daf55d44e9e4f1a9d03212cd, type: 3}
+  spawnPoint: {fileID: 0}
+  maxEggs: 100
+  spawnedEggs: []
+--- !u!114 &7705617518444239425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588545369102877903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9b40a440bc8a347819ef3829f07db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TemporarySel
+  eggSpawnScript: {fileID: 4841296793118584877}
+  moneyCounter_txt: {fileID: 0}
+  Money: 0
