@@ -487,6 +487,8 @@ MonoBehaviour:
   eggs:
   - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
   - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
+  - {fileID: 11400000, guid: 8b9b51cdebe6acd47b157e6f1fd5fadb, type: 2}
+  - {fileID: 11400000, guid: 4f7a4af846b461442b7a3c0f4eadf5cf, type: 2}
 --- !u!4 &516431996
 Transform:
   m_ObjectHideFlags: 0

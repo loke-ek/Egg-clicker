@@ -3,7 +3,7 @@ using UnityEngine;
 public class Upgrades : MonoBehaviour
 {
     [SerializeField]eggmanager eggManager;
-
+    //fix so that eggmanager is actually connected to the randomizer script 
     public void ChanceUpgrade()
     {
         Chance();
