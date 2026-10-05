@@ -1142,6 +1142,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: maxEggs
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1526359516}
