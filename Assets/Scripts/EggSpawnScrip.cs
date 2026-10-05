@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EggSpawnScript : MonoBehaviour
@@ -6,12 +7,24 @@ public class EggSpawnScript : MonoBehaviour
     [SerializeField] GameObject eggPrefab;
     [SerializeField] Transform spawnPoint;
 
+    [Header("Egg Limit")]
+    [SerializeField] int maxEggs = 100;
+
+    public List<GameObject> spawnedEggs = new List<GameObject>();
+
     public void SpawnEgg()
     {
         normalEgg selectedEgg = eggRandomizer.RandomizeEggs();
 
         if (selectedEgg == null)
             return;
+
+        if (spawnedEggs.Count >= maxEggs)
+        {
+            TemporarySel.Instance.AddMoney(selectedEgg.value_get);
+            return;
+        }
+
 
         GameObject newEgg = Instantiate(
             eggPrefab,

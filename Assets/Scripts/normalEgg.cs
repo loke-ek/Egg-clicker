@@ -4,8 +4,8 @@ using UnityEngine;
 public class normalEgg : ScriptableObject
 {
     [SerializeField] Sprite eggImage;
-    [SerializeField] int value;
+    [SerializeField] int chance;
 
     public Sprite eggImage_get => eggImage;
-    public int value_get => value;
+    public int chance_get => chance;
 }

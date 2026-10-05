@@ -3,22 +3,40 @@ using UnityEngine;
 
 public class TemporarySel : MonoBehaviour
 {
-    [SerializeField] int sellValue;
+    public static TemporarySel Instance;
+
+    [SerializeField] EggSpawnScript eggSpawnScript;
     [SerializeField] TextMeshProUGUI moneyCounter_txt;
-    void Start()
+
+    [SerializeField] int Money;
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddMoney(int amount)
     {
-        
+        Money += amount;
+        UpdateMoneyText();
     }
 
-    private void Sell()
+    public void SellEggs()
     {
-        //moneyCounter_txt = 
+        foreach (GameObject egg in eggSpawnScript.spawnedEggs)
+        {
+            if (egg != null)
+            {
+                // add the egg's value here
+                // in the next step.
+            }
+        }
 
+        eggSpawnScript.spawnedEggs.Clear();
+    }
+
+    private void UpdateMoneyText()
+    {
+        moneyCounter_txt.text = Money.ToString();
     }
 }
