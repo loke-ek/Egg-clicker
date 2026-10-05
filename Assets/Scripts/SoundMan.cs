@@ -36,10 +36,7 @@ public class SoundMan : MonoBehaviour
             Load();
         }
 
-        if (soundFXAudioSource == null)
-        {
-            soundFXAudioSource = GameObject.FindGameObjectWithTag("SoundFXAudioSource").GetComponent<AudioSource>();
-        }
+       
     }
     void FixedUpdate()
     {
