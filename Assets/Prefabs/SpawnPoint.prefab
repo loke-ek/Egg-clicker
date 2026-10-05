@@ -45,5 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   eggRandomizer: {fileID: 0}
-  eggPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  eggPrefab: {fileID: 1296731927088871011, guid: cc54ffc5daf55d44e9e4f1a9d03212cd, type: 3}
+  spawnPoint: {fileID: 8090199117472630659}
+  maxEggs: 100
+  spawnedEggs: []
