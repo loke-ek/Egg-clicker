@@ -20,7 +20,7 @@ public class EggSpawnScript : MonoBehaviour
         );
 
         newEgg.GetComponent<Rigidbody2D>().AddTorque(Random.Range(-4,4), ForceMode2D.Impulse);
-        newEgg.GetComponent<Rigidbody2D>().AddForce(new Vector3());
+        newEgg.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-10,10),Random.Range(-2,-5),0));
 
         SpriteRenderer spriteRenderer = newEgg.GetComponent<SpriteRenderer>();
 
