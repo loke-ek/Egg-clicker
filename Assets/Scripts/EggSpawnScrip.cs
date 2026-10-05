@@ -36,7 +36,7 @@ public class EggSpawnScript : MonoBehaviour
 
         if (egg != null)
         {
-            egg.value = selectedEgg.chance_get;
+            egg.value = selectedEgg.value_get;
         }
 
         newEgg.GetComponent<Rigidbody2D>().AddTorque(Random.Range(-4,4), ForceMode2D.Impulse);
