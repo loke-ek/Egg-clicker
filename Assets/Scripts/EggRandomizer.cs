@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EggRandomizer : MonoBehaviour
 {
-    [SerializeField] List<normalEgg> eggSOlist;
+    [SerializeField] public List<normalEgg> eggSOlist;
 
     public normalEgg RandomizeEggs()
     {
@@ -12,7 +12,7 @@ public class EggRandomizer : MonoBehaviour
         //makes the eggs spawn randomly
         foreach (normalEgg egg in eggSOlist)
         {
-            totalValue += egg.value_get;
+            totalValue += egg.chance_get;
         }
 
         int value = Random.Range(0, totalValue);
@@ -20,7 +20,7 @@ public class EggRandomizer : MonoBehaviour
         //the eggs value plays a part in the randomization, the higher the value the more likely it is to be chosen
         foreach (normalEgg egg in eggSOlist)
         {
-            value -= egg.value_get;
+            value -= egg.chance_get;
 
             if (value < 0)
             {

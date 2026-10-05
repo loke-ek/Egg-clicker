@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc93d92e97c9bdd4c955eb6474b10c6c, type: 3}
-  m_Name: GoldEgg
+  m_Name: dimondEgg
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
-  eggImage: {fileID: 3716488208929419877, guid: 5f45a7a72990b1f458daca109f5a700c, type: 3}
-  chance: 30
-  value: 100
+  eggImage: {fileID: 0}
+  chance: 0
+  value: 0
