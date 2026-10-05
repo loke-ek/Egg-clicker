@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EggRandomizer : MonoBehaviour
 {
-    [SerializeField] List<normalEgg> eggSOlist;
+    [SerializeField] public List<normalEgg> eggSOlist;
 
     public normalEgg RandomizeEggs()
     {
