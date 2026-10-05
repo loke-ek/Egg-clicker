@@ -21,7 +21,7 @@ public class EggSpawnScript : MonoBehaviour
 
         if (spawnedEggs.Count >= maxEggs)
         {
-            TemporarySel.Instance.AddMoney(selectedEgg.chance_get);
+            TemporarySel.Instance.storedEggValue += selectedEgg.value_get;
             return;
         }
 

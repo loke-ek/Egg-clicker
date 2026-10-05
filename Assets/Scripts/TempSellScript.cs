@@ -9,8 +9,8 @@ public class TemporarySel : MonoBehaviour
     [SerializeField] EggSpawnScript eggSpawnScript;
     [SerializeField] TextMeshProUGUI moneyCounter_txt;
 
-    [SerializeField] public int Money;
-
+    [SerializeField] int Money;
+    public int storedEggValue = 0;
     private void Awake()
     {
         Instance = this;
@@ -38,6 +38,9 @@ public class TemporarySel : MonoBehaviour
                 Destroy(eggObject);
             }
         }
+
+        Money += storedEggValue;
+        storedEggValue = 0;
 
         eggSpawnScript.spawnedEggs.Clear();
 
