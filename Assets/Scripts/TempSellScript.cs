@@ -23,16 +23,24 @@ public class TemporarySel : MonoBehaviour
 
     public void SellEggs()
     {
-        foreach (GameObject egg in eggSpawnScript.spawnedEggs)
+        foreach (GameObject eggObject in eggSpawnScript.spawnedEggs)
         {
-            if (egg != null)
+            if (eggObject != null)
             {
-                // add the egg's value here
-                // in the next step.
+                Egg egg = eggObject.GetComponent<Egg>();
+
+                if (egg != null)
+                {
+                    Money += egg.value;
+                }
+
+                Destroy(eggObject);
             }
         }
 
         eggSpawnScript.spawnedEggs.Clear();
+
+        UpdateMoneyText();
     }
 
     private void UpdateMoneyText()

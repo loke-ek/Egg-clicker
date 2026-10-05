@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GoldEgg
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
   eggImage: {fileID: 21300000, guid: e37007e9d39673447b8b3f6c7f72b09a, type: 3}
-  value: 30
+  chance: 30
