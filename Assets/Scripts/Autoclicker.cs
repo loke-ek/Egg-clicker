@@ -11,38 +11,43 @@ public class Autoclicker : MonoBehaviour
     [SerializeField] EggSpawnScript spawnScript;
     [SerializeField] TemporarySel moneyScript;
 
+    private void Start()
+    {
+        AutoClicker();
+        //StartCoroutine(AutoClicker());
+    }
     private void Update()
     {
-        if (isActive)
-        {
-            //StartCoroutine(AutoClicker());
-        }
+        //StartCoroutine(AutoClicker());
           
     }
 
     public void Upgrade()
     {
-        if (isActive)
+        if (moneyScript.Money >= cost)
         {
-            if (moneyScript.Money >= cost)
+            if (!isActive)
             {
-                interval *= upgradeMultiplier;
-                cost *= upgradeMultiplier;
-                Debug.Log("NEW VALUES: cost -- " + cost + ", interval -- " + interval);
+                isActive = true;
+                Debug.Log("ACTIVE SET TO: " + isActive);
             }
-            StartCoroutine(AutoClicker());
         }
         else
         {
-            isActive = true;
-            Debug.Log("ACTIVE SET TO: " + isActive);
+            interval *= upgradeMultiplier;
+            cost *= upgradeMultiplier;
+            Debug.Log("NEW VALUES: cost = " + cost + "// interval = " + interval);
         }
     }
 
     public IEnumerator AutoClicker()
     {
-        yield return new WaitForSeconds(interval);
-        spawnScript.SpawnEgg();
-        Debug.Log("FINISHED AUTO COR");
+        while (isActive)
+        {
+            yield return new WaitForSeconds(interval);
+
+            spawnScript.SpawnEgg();
+            Debug.Log("FINISHED AUTO COR");
+        }
     }
 }

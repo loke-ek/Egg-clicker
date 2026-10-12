@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Autoclicker
   isActive: 0
-  interval: 5
+  interval: 1
   cost: 10
   upgradeMultiplier: 1.2
   spawnScript: {fileID: 1974032112}

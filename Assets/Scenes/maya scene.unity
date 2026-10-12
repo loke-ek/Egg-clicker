@@ -455,55 +455,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8090199117472630659, guid: 782b5d1574774ba4d9c49f966589c242, type: 3}
   m_PrefabInstance: {fileID: 143699709}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &516431994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 516431996}
-  - component: {fileID: 516431995}
-  m_Layer: 0
-  m_Name: eggmanager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &516431995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516431994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696a1445143daaf4ea615933197aaf4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::eggmanager
-  eggs:
-  - {fileID: 11400000, guid: d0ac7886d30742a40b0df1f9941e2810, type: 2}
-  - {fileID: 11400000, guid: 2b45475e3e334f14ebda88f81f4c2b54, type: 2}
-  - {fileID: 11400000, guid: 8b9b51cdebe6acd47b157e6f1fd5fadb, type: 2}
-  - {fileID: 11400000, guid: 4f7a4af846b461442b7a3c0f4eadf5cf, type: 2}
---- !u!4 &516431996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516431994}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 850.4968, y: 512.192, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &736639622 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
@@ -718,7 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab36909b4e29b042952b3eadcf13ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Upgrades
-  eggManager: {fileID: 0}
+  gameManager: {fileID: 1084043867}
+  tempSell: {fileID: 0}
+  chanceButton: {fileID: 175745920}
+  valueButton: {fileID: 2104704427}
+  chancePrice: 0
+  valuePrice: 0
 --- !u!1 &1100935454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,4 +1776,3 @@ SceneRoots:
   - {fileID: 1513398643}
   - {fileID: 143699709}
   - {fileID: 864968187}
-  - {fileID: 516431996}
