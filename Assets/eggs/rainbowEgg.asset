@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc93d92e97c9bdd4c955eb6474b10c6c, type: 3}
   m_Name: rainbowEgg
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
-  eggImage: {fileID: 0}
+  eggImage: {fileID: 8478477724129561330, guid: 689a3fd6909345543b3e1097f1bb4bc6, type: 3}
   chance: 30
   value: 0
