@@ -263,7 +263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084043869}
+      - m_Target: {fileID: 1084043868}
         m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: ChanceUpgrade
         m_Mode: 1
@@ -519,7 +519,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1588545369102877903, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: m_Name
-      value: GameManager 1
+      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: spawnPoint
@@ -565,6 +565,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6433573645420076222, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: eggSOlist.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433573645420076222, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: 'eggSOlist.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b9b51cdebe6acd47b157e6f1fd5fadb, type: 2}
+    - target: {fileID: 6433573645420076222, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: 'eggSOlist.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f7a4af846b461442b7a3c0f4eadf5cf, type: 2}
     - target: {fileID: 7705617518444239425, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: moneyCounter_txt
       value: 
@@ -575,7 +587,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1588545369102877903, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1084043869}
+      addedObject: {fileID: 1084043868}
   m_SourcePrefab: {fileID: 100100000, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
 --- !u!1 &906858628
 GameObject:
@@ -694,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c99cba569244464b8a09d16e62e4531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EggRandomizer
---- !u!114 &1084043869
+--- !u!114 &1084043868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -706,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab36909b4e29b042952b3eadcf13ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Upgrades
-  eggManager: {fileID: 516431995}
+  eggManager: {fileID: 0}
 --- !u!1 &1100935454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1084043869}
+      - m_Target: {fileID: 1084043868}
         m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
         m_MethodName: ValueUpgrade
         m_Mode: 1
