@@ -44,14 +44,14 @@ public class Upgrades : MonoBehaviour
         // Check if the player has enough money for the chance upgrade
         if (tempSell.Money >= chancePrice)
         {
+            chanceButton.GetComponent<Button>().interactable = true;
             tempSell.Money -= chancePrice;
-            Chance();
             chancePrice += 100; // Increase the price for the next upgrade
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
         else if (tempSell.Money < chancePrice)
         {
-            chanceButton.SetActive(false);
+            chanceButton.GetComponent<Button>().interactable = false;
         }
         // increases the chance of golden egg, while decreasing the chance of normal egg
         Debug.Log("Upgrading eggs...");
@@ -68,14 +68,14 @@ public class Upgrades : MonoBehaviour
         // Check if the player has enough money for the value upgrade
         if (tempSell.Money >= valuePrice)
         {
+            valueButton.GetComponent<Button>().interactable = true;
             tempSell.Money -= valuePrice;
-            Value();
             valuePrice *= 2; // Increase the price for the next upgrade
         }
         // If the player doesn't have enough money for the value upgrade, disable the button
         else if (tempSell.Money < valuePrice)
         {
-            valueButton.SetActive(false);
+            valueButton.GetComponent<Button>().interactable = false;
         }
         Debug.Log("Upgrading eggs...");
         gameManager.eggSOlist[0].value *= 2;
