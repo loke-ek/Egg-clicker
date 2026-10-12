@@ -9,7 +9,7 @@ public class TemporarySel : MonoBehaviour
     [SerializeField] EggSpawnScript eggSpawnScript;
     [SerializeField] TextMeshProUGUI moneyCounter_txt;
 
-    [SerializeField] int Money;
+    [SerializeField] public int Money;
     public int storedEggValue = 0;
     private void Awake()
     {
