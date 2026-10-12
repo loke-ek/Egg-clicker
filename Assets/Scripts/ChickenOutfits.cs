@@ -1,9 +1,9 @@
-
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChickenOutfits : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer chickenRenderer;
+    [SerializeField] Image chickenImage;
     [SerializeField] TemporarySel moneyScript;
 
     [SerializeField] Sprite originalSprite;
@@ -29,7 +29,6 @@ public class ChickenOutfits : MonoBehaviour
 
         moneyScript.AddMoney(-outfit1Cost);
         outfit1Unlocked = true;
-
         Debug.Log("Outfit 1 unlocked!");
     }
 
@@ -46,7 +45,6 @@ public class ChickenOutfits : MonoBehaviour
 
         moneyScript.AddMoney(-outfit2Cost);
         outfit2Unlocked = true;
-
         Debug.Log("Outfit 2 unlocked!");
     }
 
@@ -58,7 +56,7 @@ public class ChickenOutfits : MonoBehaviour
             return;
         }
 
-        chickenRenderer.sprite = outfit1Sprite;
+        chickenImage.sprite = outfit1Sprite;
     }
 
     public void WearOutfit2()
@@ -69,11 +67,11 @@ public class ChickenOutfits : MonoBehaviour
             return;
         }
 
-        chickenRenderer.sprite = outfit2Sprite;
+        chickenImage.sprite = outfit2Sprite;
     }
 
     public void WearOriginal()
     {
-        chickenRenderer.sprite = originalSprite;
+        chickenImage.sprite = originalSprite;
     }
 }
