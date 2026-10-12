@@ -1582,8 +1582,8 @@ MonoBehaviour:
   TempSelScript: {fileID: 821541178}
   diamondEgg: {fileID: 11400000, guid: 8b9b51cdebe6acd47b157e6f1fd5fadb, type: 2}
   rainbowEgg: {fileID: 11400000, guid: 4f7a4af846b461442b7a3c0f4eadf5cf, type: 2}
-  diamondCost: 500
-  rainbowCost: 2000
+  diamondCost: 200
+  rainbowCost: 500
 --- !u!1001 &5871626963529053019
 PrefabInstance:
   m_ObjectHideFlags: 0
