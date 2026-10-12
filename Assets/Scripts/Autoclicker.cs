@@ -12,10 +12,10 @@ public class Autoclicker : MonoBehaviour
 
     public void Upgrade()
     {
-        if(moneyScript.Money >= cost)
-        {
-            //iupgrade ig
-        }
+        //if(moneyScript.Money >= cost)
+        //{
+        //    //iupgrade ig
+        //}
     }
 
     public IEnumerator AutoClicker()
