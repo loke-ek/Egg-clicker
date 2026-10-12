@@ -1,9 +1,11 @@
+using System.Runtime.ExceptionServices;
 using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
     [SerializeField]EggRandomizer gameManager;
-    //fix so that eggmanager is actually connected to the randomizer script 
+    [SerializeField]public GameObject chanceButton;
+    [SerializeField] public GameObject valueButton;
     public void ChanceUpgrade()
     {
         Chance();
