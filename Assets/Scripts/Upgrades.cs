@@ -39,7 +39,7 @@ public class Upgrades : MonoBehaviour
         RainbowEgg();
     }
 
-    public normalEgg Chance()
+    private normalEgg Chance()
     {
         // Check if the player has enough money for the chance upgrade
         if (tempSell.Money >= chancePrice)
@@ -63,7 +63,7 @@ public class Upgrades : MonoBehaviour
 
     }
 
-    public normalEgg Value()
+    private normalEgg Value()
     {
         // Check if the player has enough money for the value upgrade
         if (tempSell.Money >= valuePrice)
@@ -85,7 +85,7 @@ public class Upgrades : MonoBehaviour
         return null;
     }
 
-    public void DiamondEgg()
+    private void DiamondEgg()
     {
         if (diamondUnlocked)
         {
@@ -111,7 +111,7 @@ public class Upgrades : MonoBehaviour
         Debug.Log("Diamond egg unlocked!");
     }
 
-    public void RainbowEgg()
+    private void RainbowEgg()
     {
         if (rainbowUnlocked)
         {
