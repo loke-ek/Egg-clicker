@@ -397,6 +397,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1841237655}
     m_Modifications:
+    - target: {fileID: 99148602649269532, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 99148602649269532, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8478477724129561330, guid: 689a3fd6909345543b3e1097f1bb4bc6, type: 3}
     - target: {fileID: 320893201345868631, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_Name
       value: Chicken
@@ -439,23 +447,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 326
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 122.7974
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5322
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5532172
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5322
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6551076668154812801, guid: e75d8d56614c8224193354ff1e488f47, type: 3}
       propertyPath: m_LocalPosition.x
