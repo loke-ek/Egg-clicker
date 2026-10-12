@@ -4,30 +4,42 @@ using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] EggRandomizer gameManager;
     [SerializeField] TemporarySel tempSell;
+
+    [Header("Upgrade Settings")]
     [SerializeField] public GameObject chanceButton;
     [SerializeField] public GameObject valueButton;
     [SerializeField] public int chancePrice;
     [SerializeField] public int valuePrice;
+    [SerializeField] public int diamondCost;
+    [SerializeField] public int rainbowCost;
+    private bool diamondUnlocked = false;
+    private bool rainbowUnlocked = false;
+    [SerializeField] normalEgg diamondEgg;
+    [SerializeField] normalEgg rainbowEgg;
     public void ChanceUpgrade()
     {
-        Payment();
         Chance();
     }
 
     public void ValueUpgrade()
     {
-        Payment();
         Value();
     }
 
-    public void BuyUpgrade()
+    public void BuyDiamondEgg()
     {
-        Payment();
+        DiamondEgg();
     }
 
-    void Payment()
+    public void BuyRainbowEgg()
+    {
+        RainbowEgg();
+    }
+
+    public normalEgg Chance()
     {
         // Check if the player has enough money for the chance upgrade
         if (tempSell.Money >= chancePrice)
@@ -41,6 +53,18 @@ public class Upgrades : MonoBehaviour
         {
             chanceButton.SetActive(false);
         }
+        // increases the chance of golden egg, while decreasing the chance of normal egg
+        Debug.Log("Upgrading eggs...");
+        gameManager.eggSOlist[0].chance += 5;
+        gameManager.eggSOlist[1].chance += 10;
+        gameManager.eggSOlist[2].chance += 15;
+        gameManager.eggSOlist[3].chance += 20;
+        return null;
+
+    }
+
+    public normalEgg Value()
+    {
         // Check if the player has enough money for the value upgrade
         if (tempSell.Money >= valuePrice)
         {
@@ -53,29 +77,64 @@ public class Upgrades : MonoBehaviour
         {
             valueButton.SetActive(false);
         }
-    }
-
-    public normalEgg Chance()
-    {
-
-        // increases the chance of golden egg, while decreasing the chance of normal egg
-        Debug.Log("Upgrading eggs..."); 
-        gameManager.eggSOlist[0].chance += 5;
-        gameManager.eggSOlist[1].chance += 10;
-        gameManager.eggSOlist[2].chance += 15;
-        gameManager.eggSOlist[3].chance += 20;
-        return null;
-
-    }
-
-    public normalEgg Value()
-    {
         Debug.Log("Upgrading eggs...");
         gameManager.eggSOlist[0].value *= 2;
         gameManager.eggSOlist[1].value *= 2;
         gameManager.eggSOlist[2].value *= 2;
         gameManager.eggSOlist[3].value *= 2;
         return null;
+    }
+
+    public void DiamondEgg()
+    {
+        if (diamondUnlocked)
+        {
+            Debug.Log("Diamond egg is already unlocked");
+            return;
+        }
+
+        if (tempSell.Money < diamondCost)
+        {
+            Debug.Log("Not enough money for the diamond egg broke");
+            return;
+        }
+
+        tempSell.AddMoney(-diamondCost);
+
+        if (!gameManager.eggSOlist.Contains(diamondEgg))
+        {
+            gameManager.eggSOlist.Add(diamondEgg);
+        }
+
+        diamondUnlocked = true;
+
+        Debug.Log("Diamond egg unlocked!");
+    }
+
+    public void RainbowEgg()
+    {
+        if (rainbowUnlocked)
+        {
+            Debug.Log("Rainbow egg is already unlocked");
+            return;
+        }
+
+        if (tempSell.Money < rainbowCost)
+        {
+            Debug.Log("Not enough money for the rainbow egg broke");
+            return;
+        }
+
+        tempSell.AddMoney(-rainbowCost);
+
+        if (!gameManager.eggSOlist.Contains(rainbowEgg))
+        {
+            gameManager.eggSOlist.Add(rainbowEgg);
+        }
+
+        rainbowUnlocked = true;
+
+        Debug.Log("Rainbow egg unlocked!");
     }
 
 }

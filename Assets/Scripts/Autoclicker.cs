@@ -30,13 +30,19 @@ public class Autoclicker : MonoBehaviour
             {
                 isActive = true;
                 Debug.Log("ACTIVE SET TO: " + isActive);
+                StartCoroutine(AutoClicker());
+                Debug.Log("AUTOCOR STARTED");
+            }
+            else
+            {
+                interval /= upgradeMultiplier;
+                cost *= upgradeMultiplier;
+                Debug.Log("NEW VALUES: cost = " + cost + "// interval = " + interval);
             }
         }
         else
         {
-            interval *= upgradeMultiplier;
-            cost *= upgradeMultiplier;
-            Debug.Log("NEW VALUES: cost = " + cost + "// interval = " + interval);
+            Debug.Log("NOT ENOUGH MONEY");
         }
     }
 
@@ -45,7 +51,6 @@ public class Autoclicker : MonoBehaviour
         while (isActive)
         {
             yield return new WaitForSeconds(interval);
-
             spawnScript.SpawnEgg();
             Debug.Log("FINISHED AUTO COR");
         }
