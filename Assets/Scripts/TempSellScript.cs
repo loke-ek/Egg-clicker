@@ -9,7 +9,7 @@ public class TemporarySel : MonoBehaviour
     [SerializeField] EggSpawnScript eggSpawnScript;
     [SerializeField] TextMeshProUGUI moneyCounter_txt;
 
-    [SerializeField] public int Money;
+    [SerializeField] public float Money;
     public int storedEggValue = 0;
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class TemporarySel : MonoBehaviour
         UpdateMoneyText();
     }
 
-    private void UpdateMoneyText()
+    public void UpdateMoneyText()
     {
         //moneyCounter_txt.text = Money.ToString();
         moneyCounter_txt.text = "Money: <color=#D2691Eff>" + Money.ToString() + "</color>";

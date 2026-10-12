@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5839473}
   - component: {fileID: 5839472}
   m_Layer: 5
-  m_Name: Money per second
+  m_Name: Eggs per second
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money per second: 0'
+  m_text: 'Eggs per second: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3db53771d55e8b240b8b1c45b6f50853, type: 2}
   m_sharedMaterial: {fileID: -7589894097132646077, guid: 3db53771d55e8b240b8b1c45b6f50853, type: 2}
