@@ -46,6 +46,7 @@ public class Upgrades : MonoBehaviour
         {
             chanceButton.GetComponent<Button>().interactable = true;
             tempSell.Money -= chancePrice;
+            tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
@@ -70,6 +71,7 @@ public class Upgrades : MonoBehaviour
         {
             valueButton.GetComponent<Button>().interactable = true;
             tempSell.Money -= valuePrice;
+            tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
         }
         // If the player doesn't have enough money for the value upgrade, disable the button
