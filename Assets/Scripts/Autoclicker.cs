@@ -29,6 +29,7 @@ public class Autoclicker : MonoBehaviour
             if (!isActive)
             {
                 isActive = true;
+                //moneyScript.Money -= cost;
                 Debug.Log("ACTIVE SET TO: " + isActive);
                 StartCoroutine(AutoClicker());
                 Debug.Log("AUTOCOR STARTED");
