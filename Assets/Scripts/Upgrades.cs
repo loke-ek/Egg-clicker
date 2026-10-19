@@ -61,7 +61,7 @@ public class Upgrades : MonoBehaviour
 
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
-        else if (tempSell.Money < chancePrice) ;
+        else if (tempSell.Money < chancePrice);
         {
             chanceButton.GetComponent<Button>().interactable = false;
         }
