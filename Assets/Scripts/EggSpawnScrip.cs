@@ -16,6 +16,7 @@ public class EggSpawnScript : MonoBehaviour
 
     public void SpawnEgg()
     {
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICKCHICK, 1);
         normalEgg selectedEgg = eggRandomizer.RandomizeEggs();
 
         if (selectedEgg == null)
