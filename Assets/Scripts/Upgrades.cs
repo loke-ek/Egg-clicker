@@ -1,7 +1,9 @@
 using System.Runtime.ExceptionServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//add so that after you buy the upgrades a certain amoutn of times, your enot allowed to anymlore
 public class Upgrades : MonoBehaviour
 {
     [Header("References")]
@@ -9,6 +11,8 @@ public class Upgrades : MonoBehaviour
     [SerializeField] TemporarySel tempSell;
 
     [Header("Upgrade Settings")]
+    [SerializeField] public TextMeshProUGUI chanceCostTXT;
+    [SerializeField] public TextMeshProUGUI valueCostTXT;
     [SerializeField] public GameObject chanceButton;
     [SerializeField] public GameObject valueButton;
     [SerializeField] public int chancePrice;
@@ -19,6 +23,7 @@ public class Upgrades : MonoBehaviour
     private bool rainbowUnlocked = false;
     [SerializeField] normalEgg diamondEgg;
     [SerializeField] normalEgg rainbowEgg;
+    
     public void ChanceUpgrade()
     {
         Chance();
@@ -48,6 +53,8 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= chancePrice;
             tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
+            chanceCostTXT.text = chancePrice.ToString(); // Update the cost text
+
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
         else if (tempSell.Money < chancePrice)
@@ -73,6 +80,8 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= valuePrice;
             tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
+            valueCostTXT.text = valuePrice.ToString(); // Update the cost text
+
         }
         // If the player doesn't have enough money for the value upgrade, disable the button
         else if (tempSell.Money < valuePrice)
