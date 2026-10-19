@@ -6,8 +6,8 @@ public class TemporarySel : MonoBehaviour
 {
     public static TemporarySel Instance;
 
-    [SerializeField] EggSpawnScript eggSpawnScript;
-    [SerializeField] TextMeshProUGUI moneyCounter_txt;
+    [SerializeField] public EggSpawnScript eggSpawnScript;
+    [SerializeField] public TextMeshProUGUI moneyCounter_txt;
 
     [SerializeField] public float Money;
     public int storedEggValue = 0;
