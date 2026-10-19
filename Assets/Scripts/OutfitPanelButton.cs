@@ -2,11 +2,24 @@ using UnityEngine;
 
 public class OutfitPanelButton : MonoBehaviour
 {
-    [SerializeField] public GameObject outfitPanel;
+    [SerializeField] private GameObject outfitPanel;
 
-    public void OnButtonClick()
+
+    public void ToggleOutfitPanel()
     {
-        // Call the method in the OutfitPanel script to open the panel
-        outfitPanel.GetComponent<OutfitPanel>().OpenPanel();
+        if (outfitPanel != null)
+        {
+            bool isActive = outfitPanel.activeSelf;
+            outfitPanel.SetActive(!isActive);
+        }
+    }
+
+
+    public void CloseOutfitPanel()
+    {
+        if (outfitPanel != null)
+        {
+            outfitPanel.SetActive(false);
+        }
     }
 }
