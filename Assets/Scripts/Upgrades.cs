@@ -10,6 +10,7 @@ public class Upgrades : MonoBehaviour
     [Header("References")]
     [SerializeField] EggRandomizer gameManager;
     [SerializeField] TemporarySel tempSell;
+    [SerializeField] sceneScript sceneScript;
 
     [Header("Upgrade Settings")]
     [SerializeField] public int chanceUpgradeLimit = 0;
@@ -49,6 +50,7 @@ public class Upgrades : MonoBehaviour
 
     private normalEgg Chance()
     {
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
         // Check if the player has enough money for the chance upgrade
         if (tempSell.Money >= chancePrice)
         {
@@ -85,6 +87,7 @@ public class Upgrades : MonoBehaviour
 
     private normalEgg Value()
     {
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
         // Check if the player has enough money for the value upgrade
         if (tempSell.Money >= valuePrice)
         {
@@ -119,6 +122,7 @@ public class Upgrades : MonoBehaviour
 
     private void DiamondEgg()
     {
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
         if (diamondUnlocked)
         {
             Debug.Log("Diamond egg is already unlocked");
@@ -145,6 +149,7 @@ public class Upgrades : MonoBehaviour
 
     private void RainbowEgg()
     {
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
         if (rainbowUnlocked)
         {
             Debug.Log("Rainbow egg is already unlocked");

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: dimondEgg
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
   eggImage: {fileID: -1261337423024360753, guid: aa43e8d3c347bf34c98517d46b510800, type: 3}
-  chance: 10
-  value: 100
+  chance: 20
+  value: 50

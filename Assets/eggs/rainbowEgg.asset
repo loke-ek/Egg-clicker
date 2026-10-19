@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::normalEgg
   eggImage: {fileID: 8478477724129561330, guid: 689a3fd6909345543b3e1097f1bb4bc6, type: 3}
   chance: 5
-  value: 200
+  value: 100
