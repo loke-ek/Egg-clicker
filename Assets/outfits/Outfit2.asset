@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5995e2e125779a247ab77486bc8c80d6, type: 3}
   m_Name: Outfit2
   m_EditorClassIdentifier: Assembly-CSharp::ChickenOutfitSO
-  outfitImage: {fileID: 0}
-  cost: 0
+  outfitImage: {fileID: 6564975925944203839, guid: 39d5db937a6fd7b45af030057747689e, type: 3}
+  cost: 20
