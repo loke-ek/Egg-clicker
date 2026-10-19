@@ -53,7 +53,7 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= chancePrice;
             tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
-            chanceCostTXT.text = chancePrice.ToString(); // Update the cost text
+            chanceCostTXT.text = "Cost: " + chancePrice.ToString(); // Update the cost text
 
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
@@ -80,7 +80,7 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= valuePrice;
             tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
-            valueCostTXT.text = valuePrice.ToString(); // Update the cost text
+            valueCostTXT.text = "Cost: " + valuePrice.ToString(); // Update the cost text
 
         }
         // If the player doesn't have enough money for the value upgrade, disable the button
