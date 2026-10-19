@@ -11,7 +11,7 @@ public class TemporarySel : MonoBehaviour
 
     [SerializeField] public float Money;
     public int storedEggValue = 0;
-    private void Awake()
+    public void Awake()
     {
         Instance = this;
     }
