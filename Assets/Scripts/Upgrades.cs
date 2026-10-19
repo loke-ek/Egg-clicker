@@ -1,3 +1,4 @@
+using System.Diagnostics.Metrics;
 using System.Runtime.ExceptionServices;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Upgrades : MonoBehaviour
     [SerializeField] TemporarySel tempSell;
 
     [Header("Upgrade Settings")]
+    [SerializeField] public int chanceUpgradeLimit = 0;
+    [SerializeField] public int valueUpgradeLimit = 0;
     [SerializeField] public TextMeshProUGUI chanceCostTXT;
     [SerializeField] public TextMeshProUGUI valueCostTXT;
     [SerializeField] public GameObject chanceButton;
@@ -54,13 +57,22 @@ public class Upgrades : MonoBehaviour
             tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
             chanceCostTXT.text = "Cost: " + chancePrice.ToString(); // Update the cost text
+            chanceUpgradeLimit++; // Increase the counter of how many times youve upgraded the chance
 
         }
         // If the player doesn't have enough money for the chance upgrade, disable the button
-        else if (tempSell.Money < chancePrice)
+        else if (tempSell.Money < chancePrice) ;
         {
             chanceButton.GetComponent<Button>().interactable = false;
         }
+
+        if (chanceUpgradeLimit >= 10)
+        {
+            chanceButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Chance upgrade limit reached");
+            return null;
+        }
+
         // increases the chance of golden egg, while decreasing the chance of normal egg
         Debug.Log("Upgrading eggs...");
         gameManager.eggSOlist[0].chance += 5;
@@ -81,6 +93,7 @@ public class Upgrades : MonoBehaviour
             tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
             valueCostTXT.text = "Cost: " + valuePrice.ToString(); // Update the cost text
+            valueUpgradeLimit++; // Increase the counter of how many times youve upgraded the value
 
         }
         // If the player doesn't have enough money for the value upgrade, disable the button
@@ -88,6 +101,14 @@ public class Upgrades : MonoBehaviour
         {
             valueButton.GetComponent<Button>().interactable = false;
         }
+
+        if (valueUpgradeLimit >= 10)
+        {
+            valueButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Value upgrade limit reached");
+            return null;
+        }
+
         Debug.Log("Upgrading eggs...");
         gameManager.eggSOlist[0].value *= 2;
         gameManager.eggSOlist[1].value *= 2;
