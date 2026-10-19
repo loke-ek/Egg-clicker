@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5839473}
   - component: {fileID: 5839472}
   m_Layer: 5
-  m_Name: Eggs per second
+  m_Name: Eggs count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eggs per second: 0'
+  m_text: 'Eggs:  '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3db53771d55e8b240b8b1c45b6f50853, type: 2}
   m_sharedMaterial: {fileID: -7589894097132646077, guid: 3db53771d55e8b240b8b1c45b6f50853, type: 2}
@@ -3644,6 +3644,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: eggsText
+      value: 
+      objectReference: {fileID: 5839472}
+    - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 798804495}
@@ -3752,8 +3756,10 @@ MonoBehaviour:
   originalSprite: {fileID: 8478477724129561330, guid: 689a3fd6909345543b3e1097f1bb4bc6, type: 3}
   outfit1Sprite: {fileID: -1261337423024360753, guid: aa43e8d3c347bf34c98517d46b510800, type: 3}
   outfit2Sprite: {fileID: 21300000, guid: e37007e9d39673447b8b3f6c7f72b09a, type: 3}
+  outfit3Sprite: {fileID: 0}
   outfit1Cost: 10
   outfit2Cost: 10
+  outfit3Cost: 1500
 --- !u!114 &1974032116
 MonoBehaviour:
   m_ObjectHideFlags: 0

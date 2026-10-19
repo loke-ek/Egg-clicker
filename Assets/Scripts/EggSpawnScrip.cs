@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EggSpawnScript : MonoBehaviour
@@ -11,6 +12,7 @@ public class EggSpawnScript : MonoBehaviour
     [SerializeField] int maxEggs = 100;
 
     public List<GameObject> spawnedEggs = new List<GameObject>();
+    [SerializeField] public TextMeshProUGUI eggsText;
 
     public void SpawnEgg()
     {
@@ -50,5 +52,11 @@ public class EggSpawnScript : MonoBehaviour
         }
 
         spawnedEggs.Add(newEgg);
+        EggText();
+    }
+
+    public void EggText()
+    {
+        eggsText.text = "Eggs: " + spawnedEggs.Count.ToString();
     }
 }
