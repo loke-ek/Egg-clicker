@@ -22,7 +22,7 @@ public class BackgroundMusicScript : MonoBehaviour
         {
             instance = this;
         }
-        DontDestroyOnLoad(gameObject);
+
         audioSource = GetComponent<AudioSource>();
     }
 
