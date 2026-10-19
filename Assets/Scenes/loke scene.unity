@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5839473}
   - component: {fileID: 5839472}
   m_Layer: 5
-  m_Name: Eggs per second
+  m_Name: Eggs count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3643,6 +3643,10 @@ PrefabInstance:
       propertyPath: maxEggs
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
+      propertyPath: eggsText
+      value: 
+      objectReference: {fileID: 5839472}
     - target: {fileID: 4841296793118584877, guid: 0911f59b1c9a667419bccb7a77f6cbd1, type: 3}
       propertyPath: spawnPoint
       value: 

@@ -45,6 +45,7 @@ public class TemporarySel : MonoBehaviour
         eggSpawnScript.spawnedEggs.Clear();
 
         UpdateMoneyText();
+        eggSpawnScript.EggText();
     }
 
     public void UpdateMoneyText()
@@ -52,4 +53,7 @@ public class TemporarySel : MonoBehaviour
         //moneyCounter_txt.text = Money.ToString();
         moneyCounter_txt.text = "Money: <color=#D2691Eff>" + Money.ToString() + "</color>";
     }
+
+    
+
 }
