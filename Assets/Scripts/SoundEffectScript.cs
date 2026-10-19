@@ -18,7 +18,6 @@ public class SoundEffectScript : MonoBehaviour
             instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -37,5 +36,6 @@ public class SoundEffectScript : MonoBehaviour
         CLICKCHICK,
         COLLECTMONEY,
         EGGCRACK, 
+        OUTFITCHANGE, 
     }
 }

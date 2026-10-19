@@ -18,14 +18,14 @@ public class TemporarySel : MonoBehaviour
 
     public void AddMoney(int amount)
     {
-        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.COLLECTMONEY, 1);
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.COLLECTMONEY);
         Money += amount;
         UpdateMoneyText();
     }
 
     public void SellEggs()
     {
-        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.EGGCRACK, 1);
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.EGGCRACK);
         foreach (GameObject eggObject in eggSpawnScript.spawnedEggs)
         {
             if (eggObject != null)

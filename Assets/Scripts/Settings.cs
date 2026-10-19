@@ -16,14 +16,14 @@ public class Settings : MonoBehaviour
     {
         settingsButton.SetActive(false);
         settingsPanel.SetActive(true);
-        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK, 1);
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
     }
 
     public void Close()
     {
         settingsButton.SetActive(true);
         settingsPanel.SetActive(false);
-        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK, 1);
+        SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
 
     }
 
