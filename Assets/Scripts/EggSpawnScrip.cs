@@ -58,6 +58,6 @@ public class EggSpawnScript : MonoBehaviour
 
     public void EggText()
     {
-        eggsText.text = "Eggs: " + spawnedEggs.Count.ToString();
+        eggsText.text = spawnedEggs.Count.ToString();
     }
 }

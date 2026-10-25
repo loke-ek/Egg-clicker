@@ -58,7 +58,7 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= chancePrice;
             tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
-            chanceCostTXT.text = "Cost: " + chancePrice.ToString(); // Update the cost text
+            chanceCostTXT.text = chancePrice.ToString(); // Update the cost text
             chanceUpgradeLimit++; // Increase the counter of how many times youve upgraded the chance
 
         }
@@ -95,7 +95,7 @@ public class Upgrades : MonoBehaviour
             tempSell.Money -= valuePrice;
             tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
-            valueCostTXT.text = "Cost: " + valuePrice.ToString(); // Update the cost text
+            valueCostTXT.text = valuePrice.ToString(); // Update the cost text
             valueUpgradeLimit++; // Increase the counter of how many times youve upgraded the value
 
         }

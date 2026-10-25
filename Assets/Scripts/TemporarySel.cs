@@ -52,8 +52,8 @@ public class TemporarySel : MonoBehaviour
 
     public void UpdateMoneyText()
     {
-        //moneyCounter_txt.text = Money.ToString();
-        moneyCounter_txt.text = "Money: <color=#D2691Eff>" + Money.ToString() + "</color>";
+        moneyCounter_txt.text = Money.ToString();
+        //moneyCounter_txt.text = "Money: <color=#D2691Eff>" + Money.ToString() + "</color>";
     }
 
     

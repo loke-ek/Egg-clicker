@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
   m_sharedMaterial: {fileID: 2746168564103335677, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
@@ -1338,6 +1338,7 @@ GameObject:
   - component: {fileID: 451920088}
   - component: {fileID: 451920087}
   - component: {fileID: 451920086}
+  - component: {fileID: 451920089}
   m_Layer: 5
   m_Name: BUY
   m_TagString: Untagged
@@ -1459,6 +1460,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451920084}
   m_CullTransparentMesh: 1
+--- !u!95 &451920089
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451920084}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 136bda0dd2e70bb4ba87ba2acebd106b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &461174692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,8 +4518,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Autoclicker
   isActive: 0
   interval: 5
-  cost: 300
-  upgradeMultiplier: 1.2
+  cost: 200
+  upgradeMultiplier: 1.5
+  costText: {fileID: 1568003558}
   spawnScript: {fileID: 2139364129}
   moneyScript: {fileID: 2139364128}
 --- !u!1 &1212704759
@@ -5395,6 +5419,8 @@ GameObject:
   - component: {fileID: 1363187739}
   - component: {fileID: 1363187738}
   - component: {fileID: 1363187737}
+  - component: {fileID: 1363187740}
+  - component: {fileID: 1363187741}
   m_Layer: 5
   m_Name: BUTTON
   m_TagString: Untagged
@@ -5477,6 +5503,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1363187741}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1363187738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,6 +5553,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363187735}
   m_CullTransparentMesh: 1
+--- !u!95 &1363187740
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363187735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2952aa41a7c8d8c40afc8bcb90d294ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1363187741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363187735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f49d0d282e940341a8a375940a8f656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonScript
+  buttonAnimator: {fileID: 1363187740}
+  spawnScript: {fileID: 2139364129}
 --- !u!1 &1385450120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6061,7 +6135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COST
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
   m_sharedMaterial: {fileID: 2746168564103335677, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
@@ -6929,7 +7003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COST
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
   m_sharedMaterial: {fileID: 2746168564103335677, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
@@ -7514,7 +7588,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.0000.00.00
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
   m_sharedMaterial: {fileID: 2746168564103335677, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
@@ -8426,7 +8500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COST
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
   m_sharedMaterial: {fileID: 2746168564103335677, guid: 0f7cf0f9fd1f8d049a30e8b49995c69f, type: 2}
@@ -8817,14 +8891,14 @@ MonoBehaviour:
   gameManager: {fileID: 2139364131}
   tempSell: {fileID: 2139364128}
   sceneScript: {fileID: 140924523}
-  chanceUpgradeLimit: 10
-  valueUpgradeLimit: 15
+  chanceUpgradeLimit: 0
+  valueUpgradeLimit: 0
   chanceCostTXT: {fileID: 1784616735}
   valueCostTXT: {fileID: 2059853358}
   chanceButton: {fileID: 451920084}
   valueButton: {fileID: 1193936592}
-  chancePrice: 100
-  valuePrice: 200
+  chancePrice: 50
+  valuePrice: 100
   diamondCost: 500
   rainbowCost: 1000
   diamondEgg: {fileID: 11400000, guid: 8b9b51cdebe6acd47b157e6f1fd5fadb, type: 2}
