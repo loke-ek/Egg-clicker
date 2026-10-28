@@ -66,6 +66,7 @@ public class Upgrades : MonoBehaviour
         else if (tempSell.Money < chancePrice) 
         {
             chanceButton.GetComponent<Button>().interactable = false;
+            return null;
         }
 
         if (chanceUpgradeLimit >= 10)
@@ -103,6 +104,7 @@ public class Upgrades : MonoBehaviour
         else if (tempSell.Money < valuePrice)
         {
             valueButton.GetComponent<Button>().interactable = false;
+            return null;
         }
 
         if (valueUpgradeLimit >= 10)
