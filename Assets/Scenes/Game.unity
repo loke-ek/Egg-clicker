@@ -4980,7 +4980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1058837184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11027,8 +11027,12 @@ MonoBehaviour:
   valueUpgradeLimit: 0
   chanceCostTXT: {fileID: 1784616735}
   valueCostTXT: {fileID: 2059853358}
+  diamondEggTXT: {fileID: 1475848455}
+  rainbowEggTXT: {fileID: 1942037428}
   chanceButton: {fileID: 451920084}
   valueButton: {fileID: 1193936592}
+  diamondEggButton: {fileID: 899781363}
+  rainbowEggButton: {fileID: 288236404}
   chancePrice: 50
   valuePrice: 100
   diamondCost: 500

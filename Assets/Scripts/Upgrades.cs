@@ -17,8 +17,12 @@ public class Upgrades : MonoBehaviour
     [SerializeField] public int valueUpgradeLimit = 0;
     [SerializeField] public TextMeshProUGUI chanceCostTXT;
     [SerializeField] public TextMeshProUGUI valueCostTXT;
+    [SerializeField] public TextMeshProUGUI diamondEggTXT;
+    [SerializeField] public TextMeshProUGUI rainbowEggTXT;
     [SerializeField] public GameObject chanceButton;
     [SerializeField] public GameObject valueButton;
+    [SerializeField] public GameObject diamondEggButton;
+    [SerializeField] public GameObject rainbowEggButton;
     [SerializeField] public int chancePrice;
     [SerializeField] public int valuePrice;
     [SerializeField] public int diamondCost;
@@ -32,7 +36,8 @@ public class Upgrades : MonoBehaviour
     {
         MoneyCheckChance();
         MoneyCheckValue();
-
+        MoneyCheckDiamond();
+        MoneyCheckRainbow();
     }
 
     public void ChanceUpgrade()
@@ -55,6 +60,8 @@ public class Upgrades : MonoBehaviour
         RainbowEgg();
     }
 
+
+    // Check if the player has enough money for the chance upgrade
     public void MoneyCheckChance() 
     {
         if (tempSell.Money >= chancePrice)
@@ -75,6 +82,7 @@ public class Upgrades : MonoBehaviour
         }
     }
 
+    // Check if the player has enough money for the value upgrade
     public void MoneyCheckValue()
     {
         if (tempSell.Money >= valuePrice)
@@ -92,6 +100,49 @@ public class Upgrades : MonoBehaviour
             Debug.Log("Value upgrade limit reached");
             return;
         }
+    }
+
+    // Check if the player has enough money for the diamond egg
+    public void MoneyCheckDiamond()
+    {
+        if (diamondUnlocked)
+        {
+            Debug.Log("Diamond egg is already unlocked");
+            diamondEggButton.GetComponent<Button>().interactable = false;
+            diamondEggTXT.text = "Unlocked";
+            return;
+        }
+        if (tempSell.Money >= diamondCost)
+        {
+            diamondEggButton.GetComponent<Button>().interactable = true;
+        }
+        else if (tempSell.Money < diamondCost)
+        {
+            diamondEggButton.GetComponent<Button>().interactable = false;
+            return;
+        }
+        
+    }
+
+    public void MoneyCheckRainbow()
+    {
+        if (rainbowUnlocked)
+        {
+            Debug.Log("Rainbow egg is already unlocked");
+            rainbowEggButton.GetComponent<Button>().interactable = false;
+            rainbowEggTXT.text = "Unlocked";
+            return;
+        }
+        if (tempSell.Money >= rainbowCost)
+        {
+            rainbowEggButton.GetComponent<Button>().interactable = true;
+        }
+        else if (tempSell.Money < rainbowCost)
+        {
+            rainbowEggButton.GetComponent<Button>().interactable = false;
+            return;
+        }
+        
     }
 
     private normalEgg Chance()
@@ -142,55 +193,18 @@ public class Upgrades : MonoBehaviour
     private void DiamondEgg()
     {
         SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
-        if (diamondUnlocked)
-        {
-            Debug.Log("Diamond egg is already unlocked");
-            return;
-        }
-
-        if (tempSell.Money < diamondCost)
-        {
-            Debug.Log("Not enough money for the diamond egg broke");
-            return;
-        }
-
         tempSell.AddMoney(-diamondCost);
-
-        if (!gameManager.eggSOlist.Contains(diamondEgg))
-        {
-            gameManager.eggSOlist.Add(diamondEgg);
-        }
-
         diamondUnlocked = true;
-
-        Debug.Log("Diamond egg unlocked!");
+        gameManager.eggSOlist.Add(diamondEgg);
+        
     }
 
     private void RainbowEgg()
     {
         SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
-        if (rainbowUnlocked)
-        {
-            Debug.Log("Rainbow egg is already unlocked");
-            return;
-        }
-
-        if (tempSell.Money < rainbowCost)
-        {
-            Debug.Log("Not enough money for the rainbow egg broke");
-            return;
-        }
-
         tempSell.AddMoney(-rainbowCost);
-
-        if (!gameManager.eggSOlist.Contains(rainbowEgg))
-        {
-            gameManager.eggSOlist.Add(rainbowEgg);
-        }
-
         rainbowUnlocked = true;
-
-        Debug.Log("Rainbow egg unlocked!");
+        gameManager.eggSOlist.Add(rainbowEgg);
     }
 
 }
