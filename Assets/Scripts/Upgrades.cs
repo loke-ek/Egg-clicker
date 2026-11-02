@@ -31,6 +31,7 @@ public class Upgrades : MonoBehaviour
     private bool rainbowUnlocked = false;
     [SerializeField] normalEgg diamondEgg;
     [SerializeField] normalEgg rainbowEgg;
+    [SerializeField] Autoclicker autoclicker;
 
     public void Update()
     {
@@ -148,6 +149,7 @@ public class Upgrades : MonoBehaviour
         }
         
     }
+
 
     private normalEgg Chance()
     {

@@ -13,10 +13,23 @@ public class Autoclicker : MonoBehaviour
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] EggSpawnScript spawnScript;
     [SerializeField] TemporarySel moneyScript;
+    [SerializeField] GameObject buyButton;
 
     private void Start()
     {
         AutoClicker();
+    }
+
+    private void Update()
+    {
+        if(moneyScript.Money >= cost)
+        {
+            buyButton.SetActive(true);
+
+        } else if(moneyScript.Money < cost)
+        {
+            buyButton.SetActive(false);
+        }
     }
 
     public void Upgrade()
@@ -67,8 +80,8 @@ public class Autoclicker : MonoBehaviour
     {
         while (isActive)
         {
-            yield return new WaitForSeconds(interval);
             spawnScript.SpawnEgg();
+            yield return new WaitForSeconds(interval);
             Debug.Log("FINISHED AUTO COR");
         }
     }
