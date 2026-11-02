@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Autoclicker : MonoBehaviour
 {
@@ -13,10 +14,24 @@ public class Autoclicker : MonoBehaviour
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] EggSpawnScript spawnScript;
     [SerializeField] TemporarySel moneyScript;
+    private Button button;
 
     private void Start()
     {
+        button = GetComponent<Button>();
         AutoClicker();
+    }
+
+    private void Update()
+    {
+        if(moneyScript.Money >= cost)
+        {
+            button.interactable = true;
+
+        } else if(moneyScript.Money < cost)
+        {
+            button.interactable = false;
+        }
     }
 
     public void Upgrade()
@@ -67,8 +82,8 @@ public class Autoclicker : MonoBehaviour
     {
         while (isActive)
         {
-            yield return new WaitForSeconds(interval);
             spawnScript.SpawnEgg();
+            yield return new WaitForSeconds(interval);
             Debug.Log("FINISHED AUTO COR");
         }
     }

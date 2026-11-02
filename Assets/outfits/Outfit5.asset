@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Outfit5
   m_EditorClassIdentifier: Assembly-CSharp::ChickenOutfitSO
   outfitImage: {fileID: 21300000, guid: daf834508dc0db141a5118312a921f49, type: 3}
-  cost: 20
+  cost: 150
