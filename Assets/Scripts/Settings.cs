@@ -27,4 +27,9 @@ public class Settings : MonoBehaviour
 
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }
