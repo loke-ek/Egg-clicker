@@ -76,6 +76,7 @@ public class Upgrades : MonoBehaviour
         }
         if (chanceUpgradeLimit >= 10)
         {
+            chanceCostTXT.text = "Maxed";
             chanceButton.GetComponent<Button>().interactable = false;
             Debug.Log("Chance upgrade limit reached");
             return;
@@ -96,6 +97,7 @@ public class Upgrades : MonoBehaviour
         }
         if (valueUpgradeLimit >= 10)
         {
+            valueCostTXT.text = "Maxed";
             valueButton.GetComponent<Button>().interactable = false;
             Debug.Log("Value upgrade limit reached");
             return;
