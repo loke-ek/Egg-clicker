@@ -113,7 +113,7 @@ public class Upgrades : MonoBehaviour
         {
             Debug.Log("Diamond egg is already unlocked");
             diamondEggButton.GetComponent<Button>().interactable = false;
-            diamondEggTXT.text = "Unlocked";
+            diamondEggTXT.text = "UNLOCKED";
             return;
         }
         if (tempSell.Money >= diamondCost)
@@ -134,7 +134,7 @@ public class Upgrades : MonoBehaviour
         {
             Debug.Log("Rainbow egg is already unlocked");
             rainbowEggButton.GetComponent<Button>().interactable = false;
-            rainbowEggTXT.text = "Unlocked";
+            rainbowEggTXT.text = "UNLOCKED";
             return;
         }
         if (tempSell.Money >= rainbowCost)
