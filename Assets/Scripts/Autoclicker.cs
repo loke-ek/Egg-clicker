@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Autoclicker : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class Autoclicker : MonoBehaviour
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] EggSpawnScript spawnScript;
     [SerializeField] TemporarySel moneyScript;
-    [SerializeField] GameObject buyButton;
+    private Button button;
 
     private void Start()
     {
+        button = GetComponent<Button>();
         AutoClicker();
     }
 
@@ -24,11 +26,11 @@ public class Autoclicker : MonoBehaviour
     {
         if(moneyScript.Money >= cost)
         {
-            buyButton.SetActive(true);
+            button.interactable = true;
 
         } else if(moneyScript.Money < cost)
         {
-            buyButton.SetActive(false);
+            button.interactable = false;
         }
     }
 
