@@ -1220,6 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrades
   gameManager: {fileID: 1084043867}
   tempSell: {fileID: 1084043865}
+  sceneScript: {fileID: 0}
   chanceUpgradeLimit: 10
   valueUpgradeLimit: 15
   chanceCostTXT: {fileID: 1892281616}
@@ -2220,7 +2221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1632267094
 RectTransform:
   m_ObjectHideFlags: 0

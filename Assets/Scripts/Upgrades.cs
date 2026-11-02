@@ -27,7 +27,14 @@ public class Upgrades : MonoBehaviour
     private bool rainbowUnlocked = false;
     [SerializeField] normalEgg diamondEgg;
     [SerializeField] normalEgg rainbowEgg;
-    
+
+    public void Update()
+    {
+        MoneyCheckChance();
+        MoneyCheckValue();
+
+    }
+
     public void ChanceUpgrade()
     {
         Chance();
@@ -48,33 +55,58 @@ public class Upgrades : MonoBehaviour
         RainbowEgg();
     }
 
+    public void MoneyCheckChance() 
+    {
+        if (tempSell.Money >= chancePrice)
+        {
+            chanceButton.GetComponent<Button>().interactable = true;
+        }
+        // If the player doesn't have enough money for the chance upgrade, disable the button
+        else if (tempSell.Money < chancePrice)
+        {
+            chanceButton.GetComponent<Button>().interactable = false;
+            return;
+        }
+        if (chanceUpgradeLimit >= 10)
+        {
+            chanceButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Chance upgrade limit reached");
+            return;
+        }
+    }
+
+    public void MoneyCheckValue()
+    {
+        if (tempSell.Money >= valuePrice)
+        {
+            valueButton.GetComponent<Button>().interactable = true;
+        }
+        else if (tempSell.Money < valuePrice)
+        {
+            valueButton.GetComponent<Button>().interactable = false;
+            return;
+        }
+        if (valueUpgradeLimit >= 10)
+        {
+            valueButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Value upgrade limit reached");
+            return;
+        }
+    }
+
     private normalEgg Chance()
     {
         SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
         // Check if the player has enough money for the chance upgrade
-        if (tempSell.Money >= chancePrice)
-        {
-            chanceButton.GetComponent<Button>().interactable = true;
+        
             tempSell.Money -= chancePrice;
             tempSell.UpdateMoneyText();
             chancePrice += 100; // Increase the price for the next upgrade
             chanceCostTXT.text = chancePrice.ToString(); // Update the cost text
             chanceUpgradeLimit++; // Increase the counter of how many times youve upgraded the chance
 
-        }
-        // If the player doesn't have enough money for the chance upgrade, disable the button
-        else if (tempSell.Money < chancePrice) 
-        {
-            chanceButton.GetComponent<Button>().interactable = false;
-            return null;
-        }
-
-        if (chanceUpgradeLimit >= 10)
-        {
-            chanceButton.GetComponent<Button>().interactable = false;
-            Debug.Log("Chance upgrade limit reached");
-            return null;
-        }
+        
+        
 
         // increases the chance of golden egg, while decreasing the chance of normal egg
         Debug.Log("Upgrading eggs...");
@@ -89,30 +121,15 @@ public class Upgrades : MonoBehaviour
     private normalEgg Value()
     {
         SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
-        // Check if the player has enough money for the value upgrade
-        if (tempSell.Money >= valuePrice)
-        {
-            valueButton.GetComponent<Button>().interactable = true;
+        
+        
             tempSell.Money -= valuePrice;
             tempSell.UpdateMoneyText();
             valuePrice *= 2; // Increase the price for the next upgrade
             valueCostTXT.text = valuePrice.ToString(); // Update the cost text
             valueUpgradeLimit++; // Increase the counter of how many times youve upgraded the value
 
-        }
-        // If the player doesn't have enough money for the value upgrade, disable the button
-        else if (tempSell.Money < valuePrice)
-        {
-            valueButton.GetComponent<Button>().interactable = false;
-            return null;
-        }
-
-        if (valueUpgradeLimit >= 10)
-        {
-            valueButton.GetComponent<Button>().interactable = false;
-            Debug.Log("Value upgrade limit reached");
-            return null;
-        }
+       
 
         Debug.Log("Upgrading eggs...");
         gameManager.eggSOlist[0].value *= 2;
