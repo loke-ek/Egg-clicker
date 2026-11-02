@@ -21,7 +21,6 @@ public class SoundMan : MonoBehaviour
             instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()

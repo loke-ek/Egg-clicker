@@ -29,6 +29,9 @@ public class Autoclicker : MonoBehaviour
                 moneyScript.Money -= cost;
                 moneyScript.UpdateMoneyText();
 
+
+                SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.COLLECTMONEY);
+
                 cost *= upgradeMultiplier;
 
                 costText.text = cost.ToString();
@@ -55,6 +58,7 @@ public class Autoclicker : MonoBehaviour
         else
         {
             Debug.Log("NOT ENOUGH MONEY");
+            SoundEffectScript.instance.PlaySound(SoundEffectScript.SoundType.CLICK);
             return;
         }
     }
