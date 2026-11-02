@@ -11031,8 +11031,8 @@ MonoBehaviour:
   rainbowEggTXT: {fileID: 1942037428}
   chanceButton: {fileID: 451920084}
   valueButton: {fileID: 1193936592}
-  diamondEggButton: {fileID: 899781363}
-  rainbowEggButton: {fileID: 288236404}
+  diamondEggButton: {fileID: 1405328934}
+  rainbowEggButton: {fileID: 461174692}
   chancePrice: 50
   valuePrice: 100
   diamondCost: 500

@@ -62,8 +62,16 @@ public class Upgrades : MonoBehaviour
 
 
     // Check if the player has enough money for the chance upgrade
-    public void MoneyCheckChance() 
+    public void MoneyCheckChance()
     {
+        if (chanceUpgradeLimit >= 10)
+        {
+            chanceCostTXT.text = "Maxed";
+            chanceButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Chance upgrade limit reached");
+            return;
+        }
+
         if (tempSell.Money >= chancePrice)
         {
             chanceButton.GetComponent<Button>().interactable = true;
@@ -74,18 +82,19 @@ public class Upgrades : MonoBehaviour
             chanceButton.GetComponent<Button>().interactable = false;
             return;
         }
-        if (chanceUpgradeLimit >= 10)
-        {
-            chanceCostTXT.text = "Maxed";
-            chanceButton.GetComponent<Button>().interactable = false;
-            Debug.Log("Chance upgrade limit reached");
-            return;
-        }
     }
 
     // Check if the player has enough money for the value upgrade
     public void MoneyCheckValue()
     {
+        if (valueUpgradeLimit >= 10)
+        {
+            valueCostTXT.text = "Maxed";
+            valueButton.GetComponent<Button>().interactable = false;
+            Debug.Log("Value upgrade limit reached");
+            return;
+        }
+
         if (tempSell.Money >= valuePrice)
         {
             valueButton.GetComponent<Button>().interactable = true;
@@ -93,13 +102,6 @@ public class Upgrades : MonoBehaviour
         else if (tempSell.Money < valuePrice)
         {
             valueButton.GetComponent<Button>().interactable = false;
-            return;
-        }
-        if (valueUpgradeLimit >= 10)
-        {
-            valueCostTXT.text = "Maxed";
-            valueButton.GetComponent<Button>().interactable = false;
-            Debug.Log("Value upgrade limit reached");
             return;
         }
     }
